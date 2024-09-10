@@ -1,0 +1,294 @@
+/* ========================================
+   Variables CSS
+======================================== */
+:root {
+    --primary-color: #262626;
+    --secondary-color: #8e8e8e;
+    --border-color: #dbdbdb;
+    --font-size-small: 0.75rem; /* 12px */
+    --font-size-medium: 0.875rem; /* 14px */
+    --font-size-large: 1rem; /* 16px */
+    --font-family: 'Roboto', sans-serif;
+    --image-border-radius: 0.25rem; /* 4px */
+    --image-width: 100%;
+    --image-height: 29.25rem; /* 468px */
+    --article-padding-bottom: 1rem; /* 16px */
+    --article-margin-bottom: 1.25rem; /* 20px */
+    --icon-small: 1rem; /* 16px */
+    --icon-medium: 1.5rem; /* 24px */
+    --icon-large: 2rem; /* 32px */
+    --icon-padding: 0.5rem; /* 8px */
+    --margin-small: 0.25rem; /* 4px */
+    --margin-medium: 0.5rem; /* 8px */
+    --margin-large: 0.75rem; /* 12px */
+    --margin-xlarge: 1rem; /* 16px */
+    --padding-small: 0.25rem; /* 4px */
+    --padding-medium: 0.5rem; /* 8px */
+    --padding-large: 0.75rem; /* 12px */
+    --padding-xlarge: 1rem; /* 16px */
+    --padding-horizontal-small: 0.25rem; /* 4px */
+    --padding-horizontal-medium: 0.5rem; /* 8px */
+    --padding-horizontal-large: 0.75rem; /* 12px */
+    --padding-horizontal-xlarge: 1rem; /* 16px */
+    --font-weight-light: 300; /* Ligero */
+    --font-weight-normal: 400; /* Normal */
+    --font-weight-semibold: 600; /* Semi-negrita */
+    --font-weight-bold: 700; /* Negrita */
+    --font-weight-extrabold: 800; /* Extra-negrita */
+}
+
+
+/* ========================================
+   Estilos globales
+======================================== */
+body {
+    font-family: var(--font-family);
+    margin: 0;
+    padding: 0;
+    color: var(--primary-color);
+    line-height: 1.5;
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+/* ========================================
+   Estilos para el Post
+======================================== */
+.post {
+    width: min(29.25rem, 100%); /* 470px */
+    border-radius: var(--image-border-radius);
+    background-color: white;
+    padding-bottom: var(--article-padding-bottom);
+    margin-bottom: var(--article-margin-bottom);
+}
+
+
+/* ========================================
+   Encabezado del Post
+======================================== */
+.post__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 var(--padding-horizontal-large);
+    border-bottom: 1px solid var(--border-color);
+    min-height: 3.5rem; /* 56px */
+}
+
+.post__header-content {
+    display: flex;
+    align-items: center;
+}
+
+
+/* ========================================
+   Estilos para los Íconos
+======================================== */
+.icon {
+    display: inline-flex; /* Asegura que el ícono se comporte como una imagen */
+    justify-content: center;
+    align-items: center;
+    font-size: var(--icon-medium); /* Ajusta el tamaño base del ícono */
+}
+
+.icon--first {
+    margin-left: calc(-0.5rem); /* -8px */
+}
+
+.icon--last {
+    padding: 0; /* Aplicar padding 0 al último ícono */
+}
+
+.icon.small {
+    width: var(--icon-small);
+    height: var(--icon-small);
+}
+
+.icon.medium {
+    width: var(--icon-medium);
+    height: var(--icon-medium);
+    display: inline-flex; /* Asegura que el ícono se comporte como una imagen */
+    justify-content: center;
+    align-items: center;
+}
+
+button.icon-button {
+    background: none;       /* Elimina el fondo */
+    border: none;           /* Elimina el borde */
+    padding: 0;             /* Elimina el relleno */
+    cursor: pointer;        /* Cambia el cursor a "pointer" */
+}
+
+button.icon-button .fa-heart,
+button.icon-button .fa-message,
+button.icon-button .fa-paper-plane,
+button.icon-button .fa-bookmark {
+    font-size: var(--icon-medium); /* Ajusta el tamaño del ícono */
+    color: var(--primary-color);   /* Asegura que el color sea coherente */
+}
+
+.icon.large {
+    display: flex;
+    width: var(--icon-large);
+    height: var(--icon-large);
+    font-size: var(--icon-large); /* Usa la variable para el tamaño grande del ícono */
+}
+
+.icon-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--icon-large); /* Asegura que el contenedor tenga el mismo tamaño que el ícono */
+    height: var(--icon-large); /* Asegura que el contenedor tenga el mismo tamaño que el ícono */
+    margin-right: var(--margin-small); /* Ajusta el margen si es necesario */
+}
+
+.icon-container img {
+    padding: 0; /* Quita el padding del img dentro del contenedor */
+}
+
+
+/* ========================================
+   Íconos en la Sección del Post
+======================================== */
+.pos__icons {
+    display: flex;
+    align-items: center;
+    margin: var(--margin-small) 0;
+    justify-content: space-between;
+}
+
+.pos__icons__left {
+    display: flex;
+}
+
+.pos__icons__left .icon-button {
+    padding: 0.5rem; /* 8px = 0.5rem */
+}
+
+
+/* ========================================
+   Animaciones
+======================================== */
+.animate-grow {
+    transform: scale(1.3); /* Crece un 30% */
+    transition: transform 0.2s ease-in-out;
+}
+
+#heart-icon,
+#bookmark-icon {
+    transition: transform 0.2s ease-in-out;
+}
+
+
+/* ========================================
+   Título del Post
+======================================== */
+.post__title-header {
+    display: flex;
+    flex-direction: column;
+}
+
+.post__title-header p {
+    margin: 0;
+}
+
+.post__title-header p:first-child {
+    font-size: var(--font-size-medium);
+    font-weight: var(--font-weight-semibold);
+    line-height: 1.125rem; /* 18px */
+}
+
+.post__title-header p:last-child {
+    font-size: var(--font-size-small);
+    color: var(--secondary-color);
+    line-height: 1rem; /* 16px */
+}
+
+
+/* ========================================
+   Imagen del Post
+======================================== */
+.post__figure {
+    margin: 0;
+    padding: 0;
+    max-width: var(--image-width);
+    height: var(--image-height);
+}
+
+.post__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+
+/* ========================================
+   Sección del Post
+======================================== */
+.post__section {
+    padding: 0 var(--padding-xlarge);
+}
+
+.post__section p {
+    margin: 0;
+}
+
+
+/* ========================================
+   Texto del Post
+======================================== */
+.post__like-text {
+    font-size: var(--font-size-medium);
+    line-height: 1.125rem; /* 18px */
+    margin: 0;
+}
+
+.post__text {
+    margin-top: var(--margin-small);
+    font-size: var(--font-size-medium);
+    line-height: 1.125rem; /* 18px */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+}
+
+
+/* ========================================
+   Caja de Comentarios
+======================================== */
+.post__comment-box {
+    display: flex;
+    justify-content: space-between;
+    padding-top: var(--padding-small);
+}
+
+.post__comment-box textarea {
+    border: none;
+    border-radius: 0;
+    outline: none;
+    resize: none;
+    color: rgb(115, 115, 115); 
+    padding: 0;
+    width: 100%;
+    box-sizing: border-box; 
+}
+
+
+/* ========================================
+   Estilos Responsivos
+======================================== */
+@media (max-width: 37.5rem) { /* 600px */
+    /* Ajusta el diseño para pantallas más pequeñas */
+    .post {
+        margin-bottom: var(--margin-small);
+    }
+}
